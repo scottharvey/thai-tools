@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-  margin: 20px auto;
+  margin: 20px auto 0 auto;
   max-width: 960px;
   position: relative;
 }
@@ -41,9 +41,19 @@ body {
 }
 
 .tool {
-  bottom: -20px;
   left: 20px;
+  margin-bottom: 40px;
   position: absolute;
   right: -20px;
   top: 20px;
+}
+
+.tool-reading {
+  margin: 20px 0;
+}
+
+.tool-reading-thai {
+  font-size: 50px;
+  line-height: 1em;
+  text-align: center;
 }
