@@ -17,6 +17,12 @@ body {
   margin-top: 0;
 }
 
+.coming-soon:after {
+  content: 'coming soon';
+  color: rgb(206, 206, 206);
+  margin-left: 10px;
+}
+
 .sheet {
   background: white;
   border-radius: 5px;
@@ -48,12 +54,24 @@ body {
   top: 20px;
 }
 
-.tool-reading {
-  margin: 20px 0;
-}
-
-.tool-reading-thai {
+.tool-reading-practice-thai, .tool-typing-practice-thai {
   font-size: 50px;
   line-height: 1em;
   text-align: center;
+}
+
+.tool-reading-practice {
+  margin: 20px 0;
+}
+
+.tool-typing-practice-input {
+  display: block;
+  font-size: 30px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.tool-typing-practice .tool-typing-practice-input.error {
+  border-color: #CC2E2E;
+  transition: all .3s ease;
 }

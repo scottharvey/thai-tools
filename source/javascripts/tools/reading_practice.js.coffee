@@ -1,12 +1,12 @@
-class TT.Tools.Reading
+class TT.Tools.ReadingPractice
 
   words: []
 
   template: ->
     """
       <h2>Reading</h2>
-      <div class='tool-reading'>
-        <div class='tool-reading-thai'>
+      <div class='tool-reading-practice'>
+        <div class='tool-reading-practice-thai'>
         </div>
       </div>
     """
@@ -28,7 +28,7 @@ class TT.Tools.Reading
 
   showWord: =>
     word = @words[Math.floor(Math.random() * @words.length)]
-    @$el.find('.tool-reading-thai').html word
+    @$el.find('.tool-reading-practice-thai').html word
 
   handleKeyPress: (event) =>
     key = event.which
