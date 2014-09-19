@@ -24,8 +24,8 @@ class TT.Tools.TypingPractice
         <div class='tool-typing-practice-character-options'>
           <div class='row'>
             <div class='half'></div>
-            <div class='fourth'>No shift</div>
-            <div class='fourth'>Shift</div>
+            <div class='fourth'>Without shift</div>
+            <div class='fourth'>With Shift</div>
           </div>
           <div class='row'>
             <div class='half'>Numbers row</div>
@@ -76,11 +76,19 @@ class TT.Tools.TypingPractice
   constructor: (@$el) ->
     @$el.append @template()
     @$input = @$el.find('.tool-typing-practice-input')
-    @$thai = @$el.find('.tool-typing-practice-thai')
-    @$input.on 'focus', @showWord
-    @fetchWords @showWord
-    $(document).on 'keydown.thaiTypingPractice', @handleKeyPress
-    @$el.find('input[name="word-or-character"]').change @wordOrCharacter
+    window.keys = []
+    @$input.on 'keyup', @log
+
+  log: (e) ->
+    keys.push @value[@value.length - 1]
+    console.log  keys.length
+
+
+    # @$thai = @$el.find('.tool-typing-practice-thai')
+    # @$input.on 'focus', @showWord
+    # @fetchWords @showWord
+    # $(document).on 'keydown.thaiTypingPractice', @handleKeyPress
+    # @$el.find('input[name="word-or-character"]').change @wordOrCharacter
 
   close: =>
     $(document).off 'keydown.thaiTypingPractice'
@@ -92,18 +100,18 @@ class TT.Tools.TypingPractice
 
   showWord: =>
     word = @words[Math.floor(Math.random() * @words.length)]
-    @$input.removeClass('error')
+    @$input.val('').removeClass('error')
     @$thai.html word
     @$input.focus().val ''
 
   checkAnswer: (event) =>
     event.preventDefault()
-    answer = @$thai.html()
-    guess = @$input.val()
-    if $.trim(answer) == $.trim(guess)
-      @showWord()
-    else
-      @$input.addClass('error')
+    # answer = @$thai.html()
+    # guess = @$input.val()
+    # if $.trim(answer) == $.trim(guess)
+      # @showWord()
+    # else
+      # @$input.addClass('error')
 
   wordOrCharacter: =>
     checked = @$el.find('input[name="word-or-character"]:checked')

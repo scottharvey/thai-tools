@@ -91,7 +91,7 @@ body {
   display: none;
   margin-left: 25px;
   margin-top: 10px;
-  width: 300px;
+  width: 400px;
 }
 
 .tool-typing-practice-character-options .fourth {
@@ -99,7 +99,7 @@ body {
 }
 
 .tool-typing-practice-character-options .with-checkbox {
-  padding: 0 25px;
+  padding: 0 35px;
 }
 
 .tool-typing-practice-character-options .with-checkbox .checkbox {
