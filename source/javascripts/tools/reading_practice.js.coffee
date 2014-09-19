@@ -2,6 +2,8 @@ class TT.Tools.ReadingPractice
 
   words: []
 
+  wordsURL: -> '/words.txt'
+
   template: ->
     """
       <h2>Reading</h2>
@@ -10,8 +12,6 @@ class TT.Tools.ReadingPractice
         </div>
       </div>
     """
-
-  wordsURL: -> '/words.txt'
 
   constructor: (@$el) ->
     @$el.append @template()

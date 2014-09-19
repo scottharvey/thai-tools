@@ -2,6 +2,8 @@ class TT.Tools.TypingPractice
 
   words: []
 
+  wordsURL: -> '/words.txt'
+
   template: ->
     """
       <h2>Typing Practice</h2>
@@ -18,10 +20,10 @@ class TT.Tools.TypingPractice
       </div>
     """
 
-  wordsURL: -> '/words.txt'
-
   constructor: (@$el) ->
     @$el.append @template()
+    @$input = @$el.find('.tool-typing-practice-input')
+    @$thai = @$el.find('.tool-typing-practice-thai')
     @fetchWords @showWord
     $(document).on 'keydown.thaiTypingPractice', @handleKeyPress
 
@@ -35,18 +37,18 @@ class TT.Tools.TypingPractice
 
   showWord: =>
     word = @words[Math.floor(Math.random() * @words.length)]
-    @$el.find('.tool-typing-practice-input').removeClass('error')
-    @$el.find('.tool-typing-practice-thai').html word
-    @$el.find('.tool-typing-practice-input').focus().val ''
+    @$input.removeClass('error')
+    @$thai.html word
+    @$input.focus().val ''
 
   checkAnswer: (event) =>
     event.preventDefault()
-    answer = @$el.find('.tool-typing-practice-thai').html()
-    guess = @$el.find('.tool-typing-practice-input').val()
+    answer = @$thai.html()
+    guess = @$input.val()
     if $.trim(answer) == $.trim(guess)
       @showWord()
     else
-      @$el.find('.tool-typing-practice-input').addClass('error')
+      @$input.addClass('error')
 
   handleKeyPress: (event) =>
     key = event.which

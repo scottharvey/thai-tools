@@ -11,6 +11,7 @@ class TT.ToolNavigation
     $(document).on 'keyup.thaiNavigation', @handleKeyPress
 
   showTool: (name) =>
+    @closeTool() if @currentTool
     $container = $('.container')
     $container.append("<div class='tool sheet'><div class='sheet-close'>X</div></div>")
     $container.find('.sheet-close').on 'click', @closeTool
