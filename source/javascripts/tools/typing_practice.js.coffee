@@ -12,6 +12,59 @@ class TT.Tools.TypingPractice
         </div>
         <input type='text' class='tool-typing-practice-input' />
       </div>
+      <div class='tool-typing-practice-options options'>
+        <label class="radio">
+          <input type="radio" name="word-or-character" value='word' checked=checked>
+          <span>Words</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="word-or-character" value='character'>
+          <span>Characters</span>
+        </label>
+        <div class='tool-typing-practice-character-options'>
+          <div class='row'>
+            <div class='half'></div>
+            <div class='fourth'>No shift</div>
+            <div class='fourth'>Shift</div>
+          </div>
+          <div class='row'>
+            <div class='half'>Numbers row</div>
+            <div class='fourth with-checkbox'>
+              <label class="checkbox"><input type="checkbox"><span></span></label>
+            </div>
+            <div class='fourth with-checkbox'>
+              <label class="checkbox"><input type="checkbox"><span></span></label>
+            </div>
+          </div>
+          <div class='row'>
+            <div class='half'>Top row</div>
+            <div class='fourth with-checkbox'>
+              <label class="checkbox"><input type="checkbox"><span></span></label>
+            </div>
+            <div class='fourth with-checkbox'>
+              <label class="checkbox"><input type="checkbox"><span></span></label>
+            </div>
+          </div>
+          <div class='row'>
+            <div class='half'>Middle row</div>
+            <div class='fourth with-checkbox'>
+              <label class="checkbox"><input type="checkbox"><span></span></label>
+            </div>
+            <div class='fourth with-checkbox'>
+              <label class="checkbox"><input type="checkbox"><span></span></label>
+            </div>
+          </div>
+          <div class='row'>
+            <div class='half'>Bottom row</div>
+            <div class='fourth with-checkbox'>
+              <label class="checkbox"><input type="checkbox"><span></span></label>
+            </div>
+            <div class='fourth with-checkbox'>
+              <label class="checkbox"><input type="checkbox"><span></span></label>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class='tool-hints'>
         <ul>
           <li>Hit enter once you have typed in the word</li>
@@ -24,8 +77,10 @@ class TT.Tools.TypingPractice
     @$el.append @template()
     @$input = @$el.find('.tool-typing-practice-input')
     @$thai = @$el.find('.tool-typing-practice-thai')
+    @$input.on 'focus', @showWord
     @fetchWords @showWord
     $(document).on 'keydown.thaiTypingPractice', @handleKeyPress
+    @$el.find('input[name="word-or-character"]').change @wordOrCharacter
 
   close: =>
     $(document).off 'keydown.thaiTypingPractice'
@@ -49,6 +104,14 @@ class TT.Tools.TypingPractice
       @showWord()
     else
       @$input.addClass('error')
+
+  wordOrCharacter: =>
+    checked = @$el.find('input[name="word-or-character"]:checked')
+    characterOptions = @$el.find('.tool-typing-practice-character-options')
+    if checked.val() == 'word'
+      characterOptions.hide()
+    else
+      characterOptions.show()
 
   handleKeyPress: (event) =>
     key = event.which

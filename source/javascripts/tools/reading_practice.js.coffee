@@ -11,6 +11,11 @@ class TT.Tools.ReadingPractice
         <div class='tool-reading-practice-thai'>
         </div>
       </div>
+      <div class='tool-hints'>
+        <ul>
+          <li>Hit enter to show the next word</li>
+        </ul>
+      </div>
     """
 
   constructor: (@$el) ->
