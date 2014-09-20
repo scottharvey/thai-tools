@@ -54,7 +54,7 @@ body {
   top: 20px;
 }
 
-.tool-reading-practice-thai, .tool-typing-practice-thai {
+.tool-reading-practice-thai, .tool-typing-word-practice-thai, .tool-typing-character-practice-thai {
   font-size: 50px;
   line-height: 1em;
   text-align: center;
@@ -64,7 +64,7 @@ body {
   margin: 20px 0;
 }
 
-.tool-typing-practice-input {
+.tool-typing-word-practice-input, .tool-typing-character-practice-input {
   display: block;
   font-size: 30px;
   margin: 30px auto 20px auto;
@@ -72,7 +72,8 @@ body {
   width: 500px;
 }
 
-.tool-typing-practice .tool-typing-practice-input.error {
+.tool-typing-word-practice .tool-typing-word-practice-input.error,
+.tool-typing-character-practice .tool-typing-character-practice-input.error {
   border-color: #CC2E2E;
   transition: all .3s ease;
 }
@@ -82,30 +83,23 @@ body {
   display: block;
 }
 
-.tool-typing-practice-options {
+.tool-typing-word-practice-options, .tool-typing-character-practice-options {
   margin: 0 auto;
   width: 500px;
 }
 
-.tool-typing-practice-character-options {
-  display: none;
-  margin-left: 25px;
-  margin-top: 10px;
-  width: 400px;
-}
-
-.tool-typing-practice-character-options .fourth {
+.tool-typing-word-practice-character-options .fourth {
   text-align: center;
 }
 
-.tool-typing-practice-character-options .with-checkbox {
+.tool-typing-word-practice-character-options .with-checkbox {
   padding: 0 35px;
 }
 
-.tool-typing-practice-character-options .with-checkbox .checkbox {
+.tool-typing-word-practice-character-options .with-checkbox .checkbox {
   margin: 3px 0 0 0;
 }
 
-.tool-typing-practice-character-options .with-checkbox input {
+.tool-typing-word-practice-character-options .with-checkbox input {
   margin: 0;
 }
