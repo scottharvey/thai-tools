@@ -147,3 +147,9 @@ body {
   line-height: 1em;
   text-align: center;
 }
+
+.tool-counting {
+  font-size: 50px;
+  line-height: 1.4em;
+  text-align: center;
+}

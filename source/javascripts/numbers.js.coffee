@@ -10,7 +10,7 @@ class TT.Numbers
 
       # Tens
       else if index == 1
-        if parts[0] == '1'
+        if parts[0] == '1' and part != '0'
           result = 'เอ็ด'
         else if parts[0] == '0'
           result = ''
@@ -18,23 +18,23 @@ class TT.Numbers
 
       # Hundreds
       else if index == 2
-        result = "#{@thaiNumeral(part)}ร้อย" + result if part != '0'
+        result = @prepend "ร้อย", result, part
 
       # Thousands
       else if index == 3
-        result = "#{@thaiNumeral(part)}พัน" + result if part != '0'
+        result = @prepend "พัน", result, part
 
       # Ten Thousands
       else if index == 4
-        result = "#{@thaiNumeral(part)}หมื่น" + result if part != '0'
+        result = @prepend "หมื่น", result, part
 
       # Hundred Thousands
       else if index == 5
-        result = "#{@thaiNumeral(part)}แสน" + result if part != '0'
+        result = @prepend "แสน", result, part
 
       # Millions
       else if index == 6
-        result = "#{@thaiNumeral(part)}ล้าน" + result if part != '0'
+        result = @prepend "ล้าน", result, part
 
     result
 
@@ -49,3 +49,9 @@ class TT.Numbers
     else
       number = "#{@thaiNumeral(number)}สิบ"
     number
+
+  prepend: (word, result, part) =>
+    if part != '0'
+      "#{@thaiNumeral(part)}#{word}" + result
+    else
+      result

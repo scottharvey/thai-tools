@@ -20,7 +20,7 @@ class TT.Tools.ReadingPractice
 
   constructor: (@$el) ->
     @$el.append @template()
-    @fetchWords @showWord
+    @fetchWords @showNewWord
     $(document).on 'keypress.ReadingPractice', @handleKeyPress
 
   close: =>
@@ -31,8 +31,8 @@ class TT.Tools.ReadingPractice
       @words = data.split('\n')
       callback()
 
-  showWord: =>
+  showNewWord: =>
     @$el.find('.tool-reading-practice-thai').html TT.random(@words)
 
   handleKeyPress: (event) =>
-    @showWord() if event.which == 13
+    @showNewWord() if event.which == 13
