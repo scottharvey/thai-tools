@@ -16,7 +16,7 @@ shift_characters = ["%", "+", "๑", "๒", "๓", "๔", "ู", "฿", "๕", "
 
 thai_codes = [45, 3653, 47, 95, 3616, 3606, 3640, 3638, 3588, 3605, 3592, 3586, 3594, 3654, 3652, 3635, 3614, 3632, 3633, 3637, 3619, 3609, 3618, 3610, 3621, 3587, 3615, 3627, 3585, 3604, 3648, 3657, 3656, 3634, 3626, 3623, 3591, 3612, 3611, 3649, 3629, 3636, 3639, 3607, 3617, 3651, 3613]
 
-def map_characters(codes, characters)
+def map_characters(codes, characters, shift)
   result = []
   codes.each_with_index do |code, index|
     row = case index
@@ -28,7 +28,7 @@ def map_characters(codes, characters)
     result << {
       character: characters[index],
       keyCode: code,
-      shift: false,
+      shift: shift,
       row: row
     }
   end
@@ -37,8 +37,8 @@ end
 
 File.open("source/characters.json",'w') do |json_file|
   result = []
-  result << map_characters(codes, characters)
-  result << map_characters(shift_codes, shift_characters)
+  result << map_characters(codes, characters, false)
+  result << map_characters(shift_codes, shift_characters, true)
   result.flatten!
   json_file.write JSON.pretty_generate(result)
 end
