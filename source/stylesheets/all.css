@@ -34,12 +34,12 @@ body {
   background: rgb(172, 172, 172);
   border-radius: 32px;
   color: white;
+  cursor: pointer;
   font-size: 11px;
   height: 20px;
   left: -6px;
   line-height: 21px;
   padding: 0px 0 0 0;
-  cursor: pointer;
   position: absolute;
   text-align: center;
   top: -6px;
@@ -102,8 +102,48 @@ body {
 }
 
 .tool-time-practice-clock, .tool-time-practice-thai {
-  text-align: center;
   font-size: 60px;
   line-height: 1em;
   margin: 20px 0;
+  text-align: center;
+}
+
+.tool-character-flashcards {
+  border-radius: 5px;
+  border: 1px solid rgb(233, 233, 233);
+  margin: 0 auto;
+  padding: 30px;
+  width: 300px;
+}
+
+.tool-character-flashcards div {
+  color: rgb(172, 172, 172);
+  display: none;
+}
+
+.tool-character-flashcards .tool-character-flashcards-character {
+  color: black;
+  display: block;
+  margin-bottom: 25px;
+}
+
+.tool-character-flashcards.answer div {
+  display: block;
+}
+
+.tool-character-flashcards.answer span {
+  color: black;
+  margin-left: 10px;
+}
+
+.tool-character-flashcards.vowel .tool-character-flashcards-word,
+.tool-character-flashcards.vowel .tool-character-flashcards-word-romanisation,
+.tool-character-flashcards.vowel .tool-character-flashcards-word-translation {
+  display: none;
+}
+
+.tool-character-flashcards-character {
+  font-size: 90px;
+  line-height: 1em;
+  text-align: center;
 }
