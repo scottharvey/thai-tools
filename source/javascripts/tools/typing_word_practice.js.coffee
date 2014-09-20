@@ -15,7 +15,7 @@ class TT.Tools.TypingWordPractice
       <div class='tool-hints'>
         <ul>
           <li>Hit enter once you have typed in the word</li>
-          <li>Press command + enter to skip the word</li>
+          <li>Press command+enter to skip the word</li>
         </ul>
       </div>
     """
@@ -24,37 +24,36 @@ class TT.Tools.TypingWordPractice
     @$el.append @template()
     @$input = @$el.find('.tool-typing-word-practice-input')
     @$thai = @$el.find('.tool-typing-word-practice-thai')
-    @$input.on 'focus', @showWord
+    @$input.on 'focus', @showNewWord
     @fetchWords =>
-      @showWord()
+      @showNewWord()
       @$input.focus()
-    $(document).on 'keydown.thaiTypingWordPractice', @handleKeyPress
+    $(document).on 'keydown.TypingWordPractice', @handleKeyPress
 
   close: =>
-    $(document).off 'keydown.thaiTypingWordPractice'
+    $(document).off 'keydown.TypingWordPractice'
 
   fetchWords: (callback) =>
     $.get @wordsURL(), (data) =>
       @words = data.split('\n')
       callback()
 
-  showWord: =>
-    word = @words[Math.floor(Math.random() * @words.length)]
+  showNewWord: =>
     @$input.val('').removeClass('error')
-    @$thai.html word
+    @$thai.html TT.characters.random(@words)
 
   checkAnswer: (event) =>
     event.preventDefault()
-    answer = @$thai.html()
-    guess = @$input.val()
-    if $.trim(answer) == $.trim(guess)
-      @showWord()
+    question = @$thai.html()
+    answer = @$input.val()
+    if $.trim(question) == $.trim(answer)
+      @showNewWord()
     else
       @$input.addClass('error')
 
   handleKeyPress: (event) =>
     key = event.which
     if (event.metaKey || event.ctrlKey) && key == 13
-      @showWord()
+      @showNewWord()
     else if key == 13
       @checkAnswer(event)

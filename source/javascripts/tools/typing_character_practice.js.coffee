@@ -61,14 +61,14 @@ class TT.Tools.TypingCharacterPractice
     @$el.append @template()
     @$input = @$el.find('.tool-typing-character-practice-input')
     @$thai = @$el.find('.tool-typing-character-practice-thai')
-    @$input.on 'focus', @showCharacter
+    @$input.on 'focus', @showNewCharacter
     @$input.focus()
-    $(document).on 'keyup.thaiTypingCharacterPractice', @checkAnswer
+    $(document).on 'keyup.TypingCharacterPractice', @checkAnswer
 
   close: =>
-    $(document).off 'keyup.thaiTypingCharacterPractice'
+    $(document).off 'keyup.TypingCharacterPractice'
 
-  showCharacter: =>
+  showNewCharacter: =>
     @$input.val('').removeClass('error')
     values = []
     @$el.find("input[type='checkbox']:checked").each (index, element) =>
@@ -83,9 +83,9 @@ class TT.Tools.TypingCharacterPractice
     @$thai.html TT.characters.random(characters)
 
   checkAnswer: (event) =>
-    answer = @$thai.html()
-    guess = @$input.val()
-    if answer.slice(-1) == guess.slice(-1)
-      @showCharacter()
+    question = @$thai.html()
+    answer = @$input.val()
+    if question.slice(-1) == answer.slice(-1)
+      @showNewCharacter()
     else
       @$input.addClass('error')

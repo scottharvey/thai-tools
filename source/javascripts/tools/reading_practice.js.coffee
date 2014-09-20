@@ -21,10 +21,10 @@ class TT.Tools.ReadingPractice
   constructor: (@$el) ->
     @$el.append @template()
     @fetchWords @showWord
-    $(document).on 'keypress.thaiReading', @handleKeyPress
+    $(document).on 'keypress.ReadingPractice', @handleKeyPress
 
   close: =>
-    $(document).off 'keypress.thaiReading'
+    $(document).off 'keypress.ReadingPractice'
 
   fetchWords: (callback) =>
     $.get @wordsURL(), (data) =>
@@ -32,10 +32,7 @@ class TT.Tools.ReadingPractice
       callback()
 
   showWord: =>
-    word = @words[Math.floor(Math.random() * @words.length)]
-    @$el.find('.tool-reading-practice-thai').html word
+    @$el.find('.tool-reading-practice-thai').html TT.characters.random(@words)
 
   handleKeyPress: (event) =>
-    key = event.which
-    if key == 13
-      @showWord()
+    @showWord() if event.which == 13
