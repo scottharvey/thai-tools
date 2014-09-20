@@ -2,6 +2,7 @@
 #= require namespaces
 #= require characters
 #= require tool_navigation
+#= require type_thai
 #= require_tree ./tools
 #= require_self
 

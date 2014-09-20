@@ -1,0 +1,566 @@
+[
+  {
+    "character": "-",
+    "keyCode": 96,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "ๅ",
+    "keyCode": 49,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "/",
+    "keyCode": 50,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "_",
+    "keyCode": 51,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "ภ",
+    "keyCode": 52,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "ถ",
+    "keyCode": 53,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "ุ",
+    "keyCode": 54,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "ึ",
+    "keyCode": 55,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "ค",
+    "keyCode": 56,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "ต",
+    "keyCode": 57,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "จ",
+    "keyCode": 48,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "ข",
+    "keyCode": 45,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "ช",
+    "keyCode": 61,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "ๆ",
+    "keyCode": 113,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ไ",
+    "keyCode": 119,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ำ",
+    "keyCode": 101,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "พ",
+    "keyCode": 114,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ะ",
+    "keyCode": 116,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ั",
+    "keyCode": 121,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ี",
+    "keyCode": 117,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ร",
+    "keyCode": 105,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "น",
+    "keyCode": 111,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ย",
+    "keyCode": 112,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "บ",
+    "keyCode": 91,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ล",
+    "keyCode": 93,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ฃ",
+    "keyCode": 92,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ฟ",
+    "keyCode": 97,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ห",
+    "keyCode": 115,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ก",
+    "keyCode": 100,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ด",
+    "keyCode": 102,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "เ",
+    "keyCode": 103,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "้",
+    "keyCode": 104,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "่",
+    "keyCode": 106,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "า",
+    "keyCode": 107,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ส",
+    "keyCode": 108,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ว",
+    "keyCode": 59,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ง",
+    "keyCode": 39,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ผ",
+    "keyCode": 122,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ป",
+    "keyCode": 120,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "แ",
+    "keyCode": 99,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "อ",
+    "keyCode": 118,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ิ",
+    "keyCode": 98,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ื",
+    "keyCode": 110,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ท",
+    "keyCode": 109,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ม",
+    "keyCode": 44,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ใ",
+    "keyCode": 46,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ฝ",
+    "keyCode": 47,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "%",
+    "keyCode": 126,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "+",
+    "keyCode": 33,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "๑",
+    "keyCode": 64,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "๒",
+    "keyCode": 35,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "๓",
+    "keyCode": 36,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "๔",
+    "keyCode": 37,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "ู",
+    "keyCode": 94,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "฿",
+    "keyCode": 38,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "๕",
+    "keyCode": 42,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "๖",
+    "keyCode": 40,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "๗",
+    "keyCode": 41,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "๘",
+    "keyCode": 95,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "๙",
+    "keyCode": 43,
+    "shift": false,
+    "row": "number"
+  },
+  {
+    "character": "๐",
+    "keyCode": 81,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "”",
+    "keyCode": 87,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ฎ",
+    "keyCode": 69,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ฑ",
+    "keyCode": 82,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ธ",
+    "keyCode": 84,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ํ",
+    "keyCode": 89,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "๊",
+    "keyCode": 85,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ณ",
+    "keyCode": 73,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ฯ",
+    "keyCode": 79,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ญ",
+    "keyCode": 80,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ฐ",
+    "keyCode": 123,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": ",",
+    "keyCode": 125,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ฅ",
+    "keyCode": 124,
+    "shift": false,
+    "row": "top"
+  },
+  {
+    "character": "ฤ",
+    "keyCode": 65,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ฆ",
+    "keyCode": 83,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ฏ",
+    "keyCode": 68,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "โ",
+    "keyCode": 70,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ฌ",
+    "keyCode": 71,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "็",
+    "keyCode": 72,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "๋",
+    "keyCode": 74,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ษ",
+    "keyCode": 75,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ศ",
+    "keyCode": 76,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ซ",
+    "keyCode": 58,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": ".",
+    "keyCode": 34,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "(",
+    "keyCode": 90,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": ")",
+    "keyCode": 88,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ฉ",
+    "keyCode": 67,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ฮ",
+    "keyCode": 86,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ฺ",
+    "keyCode": 66,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "์",
+    "keyCode": 78,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "?",
+    "keyCode": 77,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ฒ",
+    "keyCode": 60,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ฬ",
+    "keyCode": 62,
+    "shift": false,
+    "row": "middle"
+  },
+  {
+    "character": "ฦ",
+    "keyCode": 63,
+    "shift": false,
+    "row": "middle"
+  }
+]

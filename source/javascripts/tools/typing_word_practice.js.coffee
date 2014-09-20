@@ -24,6 +24,7 @@ class TT.Tools.TypingWordPractice
     @$el.append @template()
     @$input = @$el.find('.tool-typing-word-practice-input')
     @$thai = @$el.find('.tool-typing-word-practice-thai')
+    new TT.TypeThai(@$input)
     @$input.on 'focus', @showNewWord
     @fetchWords =>
       @showNewWord()
@@ -43,7 +44,6 @@ class TT.Tools.TypingWordPractice
     @$thai.html TT.characters.random(@words)
 
   checkAnswer: (event) =>
-    event.preventDefault()
     question = @$thai.html()
     answer = @$input.val()
     if $.trim(question) == $.trim(answer)
