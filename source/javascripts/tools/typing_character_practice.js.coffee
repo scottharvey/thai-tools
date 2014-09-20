@@ -81,7 +81,7 @@ class TT.Tools.TypingCharacterPractice
       row = value.replace("-shift", "")
       characters.push(character) for character in TT.characters.forRow(row, shift)
 
-    @$thai.html TT.characters.random(characters)
+    @$thai.html TT.random(characters)
 
   checkAnswer: (event) =>
     question = @$thai.html()

@@ -41,7 +41,7 @@ class TT.Tools.TypingWordPractice
 
   showNewWord: =>
     @$input.val('').removeClass('error')
-    @$thai.html TT.characters.random(@words)
+    @$thai.html TT.random(@words)
 
   checkAnswer: (event) =>
     question = @$thai.html()

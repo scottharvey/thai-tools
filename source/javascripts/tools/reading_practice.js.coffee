@@ -32,7 +32,7 @@ class TT.Tools.ReadingPractice
       callback()
 
   showWord: =>
-    @$el.find('.tool-reading-practice-thai').html TT.characters.random(@words)
+    @$el.find('.tool-reading-practice-thai').html TT.random(@words)
 
   handleKeyPress: (event) =>
     @showWord() if event.which == 13

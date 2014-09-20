@@ -25,6 +25,4 @@ class TT.Characters
 
   byKeyCode: (keyCode) -> @allCharactersByKeyCode[keyCode]
 
-  randomCharacter: -> @random(@allCharacters)
-
-  random: (array) -> array[Math.floor(Math.random() * array.length)]
+  randomCharacter: -> TT.random(@allCharacters)
