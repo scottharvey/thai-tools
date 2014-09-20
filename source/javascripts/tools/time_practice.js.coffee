@@ -40,8 +40,8 @@ class TT.Tools.TimePractice
 
   showAnswer: =>
     @currentStep = 'answer'
-    thaiHour = TT.numbers.inThai @currentTime.hour
-    thaiMinute = TT.numbers.inThai @currentTime.minute
+    thaiHour = TT.numbers.translate @currentTime.hour
+    thaiMinute = TT.numbers.translate @currentTime.minute
     minutes = "นาที"
     if @currentTime.ampm == 'am'
       if @currentTime.hour == 12
@@ -60,7 +60,7 @@ class TT.Tools.TimePractice
       else if @currentTime.hour == 6
         answer = "หกโมงเย็น#{thaiMinute}#{minutes}"
       else if @currentTime.hour > 6 && @currentTime.hour < 12
-        thaiHour = TT.numbers.inThai(@currentTime.hour - 6)
+        thaiHour = TT.numbers.translate(@currentTime.hour - 6)
         answer = "#{thaiHour}ทุ่ม#{thaiMinute}#{minutes}"
     @$thai.html answer
 

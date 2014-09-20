@@ -1,22 +1,41 @@
 class TT.Numbers
 
-  inThai: (number) ->
-    number = parseInt(number).toString()
-    if number < 10
-      result = @thaiNumeral(number)
-    else if number >= 10 and number < 100
-      result = @thaiTens(number[0])
-      if number[1] > 1
-        result += @thaiNumeral(number[1])
-      else if number[1] == '1'
-        result += 'เอ็ด'
-    else if number >= 100 and number < 1000
-      result = @thaiHundreds(number[0])
-      result = @thaiTens(number[1])
-      if number[1] > 1
-        result += @thaiNumeral(number[1])
-      else if number[1] == '1'
-        result += 'เอ็ด'
+  translate: (number) ->
+    number = number.toString()
+    parts = number.split('').reverse()
+    result = ""
+    for part, index in parts
+      if index == 0
+        result = @thaiNumeral part
+
+      # Tens
+      else if index == 1
+        if parts[0] == '1'
+          result = 'เอ็ด'
+        else if parts[0] == '0'
+          result = ''
+        result = @thaiTens(part) + result if part != '0'
+
+      # Hundreds
+      else if index == 2
+        result = "#{@thaiNumeral(part)}ร้อย" + result if part != '0'
+
+      # Thousands
+      else if index == 3
+        result = "#{@thaiNumeral(part)}พัน" + result if part != '0'
+
+      # Ten Thousands
+      else if index == 4
+        result = "#{@thaiNumeral(part)}หมื่น" + result if part != '0'
+
+      # Hundred Thousands
+      else if index == 5
+        result = "#{@thaiNumeral(part)}แสน" + result if part != '0'
+
+      # Millions
+      else if index == 6
+        result = "#{@thaiNumeral(part)}ล้าน" + result if part != '0'
+
     result
 
   thaiNumeral: (number) =>
@@ -30,6 +49,3 @@ class TT.Numbers
     else
       number = "#{@thaiNumeral(number)}สิบ"
     number
-
-  thaiHundreds: (number) =>
-    "#{@thaiNumeral(number)}ร้อย"
