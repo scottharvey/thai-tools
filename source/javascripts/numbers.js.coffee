@@ -10,6 +10,13 @@ class TT.Numbers
         result += @thaiNumeral(number[1])
       else if number[1] == '1'
         result += 'เอ็ด'
+    else if number >= 100 and number < 1000
+      result = @thaiHundreds(number[0])
+      result = @thaiTens(number[1])
+      if number[1] > 1
+        result += @thaiNumeral(number[1])
+      else if number[1] == '1'
+        result += 'เอ็ด'
     result
 
   thaiNumeral: (number) =>
@@ -23,3 +30,6 @@ class TT.Numbers
     else
       number = "#{@thaiNumeral(number)}สิบ"
     number
+
+  thaiHundreds: (number) =>
+    "#{@thaiNumeral(number)}ร้อย"
