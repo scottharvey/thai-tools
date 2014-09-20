@@ -88,12 +88,9 @@ body {
   width: 500px;
 }
 
-.tool-typing-word-practice-character-options .fourth {
-  text-align: center;
-}
-
 .tool-typing-word-practice-character-options .with-checkbox {
   padding: 0 35px;
+  text-align: center;
 }
 
 .tool-typing-word-practice-character-options .with-checkbox .checkbox {

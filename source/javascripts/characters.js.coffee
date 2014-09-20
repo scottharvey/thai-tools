@@ -6,479 +6,585 @@ class TT.Characters
     $.each @all, (index, attrs) =>
       @allCharacters.push attrs["character"]
 
-  randomCharacter: =>
-    @allCharacters[Math.floor(Math.random() * @allCharacters.length)]
+  forRow: (row, shift) ->
+    @byRow ||= {}
+    @byRow["#{row}-#{shift}"] ||= @charactersForRow(row, shift)
+
+  charactersForRow: (row, shift) ->
+    result = []
+    for attrs in @all
+      if attrs["row"] == row && attrs["shift"] == shift
+        result.push attrs["character"]
+    result
+
+  randomCharacter: -> @random(@allCharacters)
+
+  random: (array) -> array[Math.floor(Math.random() * array.length)]
 
   all: [
     {
       "character":"-",
       "keyCode":192,
-      "shift":false
+      "shift":false,
+      "row":"number"
     },
     {
       "character":"ๅ",
       "keyCode":49,
-      "shift":false
+      "shift":false,
+      "row":"number"
     },
     {
       "character":"/",
       "keyCode":50,
-      "shift":false
+      "shift":false,
+      "row":"number"
     },
     {
       "character":"_",
       "keyCode":51,
-      "shift":false
+      "shift":false,
+      "row":"number"
     },
     {
       "character":"ภ",
       "keyCode":52,
-      "shift":false
+      "shift":false,
+      "row":"number"
     },
     {
       "character":"ถ",
       "keyCode":53,
-      "shift":false
+      "shift":false,
+      "row":"number"
     },
     {
       "character":"ุ",
       "keyCode":54,
-      "shift":false
+      "shift":false,
+      "row":"number"
     },
     {
       "character":"ึ",
       "keyCode":55,
-      "shift":false
+      "shift":false,
+      "row":"number"
     },
     {
       "character":"ค",
       "keyCode":56,
-      "shift":false
+      "shift":false,
+      "row":"number"
     },
     {
       "character":"ต",
       "keyCode":57,
-      "shift":false
+      "shift":false,
+      "row":"number"
     },
     {
       "character":"จ",
       "keyCode":48,
-      "shift":false
+      "shift":false,
+      "row":"number"
     },
     {
       "character":"ข",
       "keyCode":189,
-      "shift":false
+      "shift":false,
+      "row":"number"
     },
     {
       "character":"ช",
       "keyCode":187,
-      "shift":false
+      "shift":false,
+      "row":"number"
     },
     {
       "character":"ๆ",
       "keyCode":81,
-      "shift":false
+      "shift":false,
+      "row":"top"
     },
     {
       "character":"ไ",
       "keyCode":87,
-      "shift":false
+      "shift":false,
+      "row":"top"
     },
     {
       "character":"ำ",
       "keyCode":69,
-      "shift":false
+      "shift":false,
+      "row":"top"
     },
     {
       "character":"พ",
       "keyCode":82,
-      "shift":false
+      "shift":false,
+      "row":"top"
     },
     {
       "character":"ะ",
       "keyCode":84,
-      "shift":false
+      "shift":false,
+      "row":"top"
     },
     {
       "character":"ั",
       "keyCode":89,
-      "shift":false
+      "shift":false,
+      "row":"top"
     },
     {
       "character":"ี",
       "keyCode":85,
-      "shift":false
+      "shift":false,
+      "row":"top"
     },
     {
       "character":"ร",
       "keyCode":73,
-      "shift":false
+      "shift":false,
+      "row":"top"
     },
     {
       "character":"น",
       "keyCode":79,
-      "shift":false
+      "shift":false,
+      "row":"top"
     },
     {
       "character":"ย",
       "keyCode":80,
-      "shift":false
+      "shift":false,
+      "row":"top"
     },
     {
       "character":"บ",
       "keyCode":219,
-      "shift":false
+      "shift":false,
+      "row":"top"
     },
     {
       "character":"ล",
       "keyCode":221,
-      "shift":false
+      "shift":false,
+      "row":"top"
     },
     {
       "character":"ฃ",
       "keyCode":220,
-      "shift":false
+      "shift":false,
+      "row":"top"
     },
     {
       "character":"ฟ",
       "keyCode":65,
-      "shift":false
+      "shift":false,
+      "row":"middle"
     },
     {
       "character":"ห",
       "keyCode":83,
-      "shift":false
+      "shift":false,
+      "row":"middle"
     },
     {
       "character":"ก",
       "keyCode":68,
-      "shift":false
+      "shift":false,
+      "row":"middle"
     },
     {
       "character":"ด",
       "keyCode":70,
-      "shift":false
+      "shift":false,
+      "row":"middle"
     },
     {
       "character":"เ",
       "keyCode":71,
-      "shift":false
+      "shift":false,
+      "row":"middle"
     },
     {
       "character":"้",
       "keyCode":72,
-      "shift":false
+      "shift":false,
+      "row":"middle"
     },
     {
       "character":"่",
       "keyCode":74,
-      "shift":false
+      "shift":false,
+      "row":"middle"
     },
     {
       "character":"า",
       "keyCode":75,
-      "shift":false
+      "shift":false,
+      "row":"middle"
     },
     {
       "character":"ส",
       "keyCode":76,
-      "shift":false
+      "shift":false,
+      "row":"middle"
     },
     {
       "character":"ว",
       "keyCode":186,
-      "shift":false
+      "shift":false,
+      "row":"middle"
     },
     {
       "character":"ง",
       "keyCode":222,
-      "shift":false
+      "shift":false,
+      "row":"middle"
     },
     {
       "character":"ผ",
       "keyCode":90,
-      "shift":false
+      "shift":false,
+      "row":"bottom"
     },
     {
       "character":"ป",
       "keyCode":88,
-      "shift":false
+      "shift":false,
+      "row":"bottom"
     },
     {
       "character":"แ",
       "keyCode":67,
-      "shift":false
+      "shift":false,
+      "row":"bottom"
     },
     {
       "character":"อ",
       "keyCode":86,
-      "shift":false
+      "shift":false,
+      "row":"bottom"
     },
     {
       "character":"ิ",
       "keyCode":66,
-      "shift":false
+      "shift":false,
+      "row":"bottom"
     },
     {
       "character":"ื",
       "keyCode":78,
-      "shift":false
+      "shift":false,
+      "row":"bottom"
     },
     {
       "character":"ท",
       "keyCode":77,
-      "shift":false
+      "shift":false,
+      "row":"bottom"
     },
     {
       "character":"ม",
       "keyCode":188,
-      "shift":false
+      "shift":false,
+      "row":"bottom"
     },
     {
       "character":"ใ",
       "keyCode":190,
-      "shift":false
+      "shift":false,
+      "row":"bottom"
     },
     {
       "character":"ฝ",
       "keyCode":191,
-      "shift":false
+      "shift":false,
+      "row":"bottom"
     },
     {
       "character":"%",
       "keyCode":192,
-      "shift":true
+      "shift":true,
+      "row":"number"
     },
     {
       "character":"+",
       "keyCode":49,
-      "shift":true
+      "shift":true,
+      "row":"number"
     },
     {
       "character":"๑",
       "keyCode":50,
-      "shift":true
+      "shift":true,
+      "row":"number"
     },
     {
       "character":"๒",
       "keyCode":51,
-      "shift":true
+      "shift":true,
+      "row":"number"
     },
     {
       "character":"๓",
       "keyCode":52,
-      "shift":true
+      "shift":true,
+      "row":"number"
     },
     {
       "character":"๔",
       "keyCode":53,
-      "shift":true
+      "shift":true,
+      "row":"number"
     },
     {
       "character":"ู",
       "keyCode":54,
-      "shift":true
+      "shift":true,
+      "row":"number"
     },
     {
       "character":"฿",
       "keyCode":55,
-      "shift":true
+      "shift":true,
+      "row":"number"
     },
     {
       "character":"๕",
       "keyCode":56,
-      "shift":true
+      "shift":true,
+      "row":"number"
     },
     {
       "character":"๖",
       "keyCode":57,
-      "shift":true
+      "shift":true,
+      "row":"number"
     },
     {
       "character":"๗",
       "keyCode":48,
-      "shift":true
+      "shift":true,
+      "row":"number"
     },
     {
       "character":"๘",
       "keyCode":189,
-      "shift":true
+      "shift":true,
+      "row":"number"
     },
     {
       "character":"๙",
       "keyCode":187,
-      "shift":true
+      "shift":true,
+      "row":"number"
     },
     {
       "character":"๐",
       "keyCode":81,
-      "shift":true
+      "shift":true,
+      "row":"top"
     },
     {
       "character":"”",
       "keyCode":87,
-      "shift":true
+      "shift":true,
+      "row":"top"
     },
     {
       "character":"ฎ",
       "keyCode":69,
-      "shift":true
+      "shift":true,
+      "row":"top"
     },
     {
       "character":"ฑ",
       "keyCode":82,
-      "shift":true
+      "shift":true,
+      "row":"top"
     },
     {
       "character":"ธ",
       "keyCode":84,
-      "shift":true
+      "shift":true,
+      "row":"top"
     },
     {
       "character":"ํ",
       "keyCode":89,
-      "shift":true
+      "shift":true,
+      "row":"top"
     },
     {
       "character":"๊",
       "keyCode":85,
-      "shift":true
+      "shift":true,
+      "row":"top"
     },
     {
       "character":"ณ",
       "keyCode":73,
-      "shift":true
+      "shift":true,
+      "row":"top"
     },
     {
       "character":"ฯ",
       "keyCode":79,
-      "shift":true
+      "shift":true,
+      "row":"top"
     },
     {
       "character":"ญ",
       "keyCode":80,
-      "shift":true
+      "shift":true,
+      "row":"top"
     },
     {
       "character":"ฐ",
       "keyCode":219,
-      "shift":true
+      "shift":true,
+      "row":"top"
     },
     {
       "character":",",
       "keyCode":221,
-      "shift":true
+      "shift":true,
+      "row":"top"
     },
     {
       "character":"ฅ",
       "keyCode":220,
-      "shift":true
+      "shift":true,
+      "row":"top"
     },
     {
       "character":"ฤ",
       "keyCode":65,
-      "shift":true
+      "shift":true,
+      "row":"middle"
     },
     {
       "character":"ฆ",
       "keyCode":83,
-      "shift":true
+      "shift":true,
+      "row":"middle"
     },
     {
       "character":"ฏ",
       "keyCode":68,
-      "shift":true
+      "shift":true,
+      "row":"middle"
     },
     {
       "character":"โ",
       "keyCode":70,
-      "shift":true
+      "shift":true,
+      "row":"middle"
     },
     {
       "character":"ฌ",
       "keyCode":71,
-      "shift":true
+      "shift":true,
+      "row":"middle"
     },
     {
       "character":"็",
       "keyCode":72,
-      "shift":true
+      "shift":true,
+      "row":"middle"
     },
     {
       "character":"๋",
       "keyCode":74,
-      "shift":true
+      "shift":true,
+      "row":"middle"
     },
     {
       "character":"ษ",
       "keyCode":75,
-      "shift":true
+      "shift":true,
+      "row":"middle"
     },
     {
       "character":"ศ",
       "keyCode":76,
-      "shift":true
+      "shift":true,
+      "row":"middle"
     },
     {
       "character":"ซ",
       "keyCode":186,
-      "shift":true
+      "shift":true,
+      "row":"middle"
     },
     {
       "character":".",
       "keyCode":222,
-      "shift":true
+      "shift":true,
+      "row":"middle"
     },
     {
       "character":"(",
       "keyCode":90,
-      "shift":true
+      "shift":true,
+      "row":"bottom"
     },
     {
       "character":")",
       "keyCode":88,
-      "shift":true
+      "shift":true,
+      "row":"bottom"
     },
     {
       "character":"ฉ",
       "keyCode":67,
-      "shift":true
+      "shift":true,
+      "row":"bottom"
     },
     {
       "character":"ฮ",
       "keyCode":86,
-      "shift":true
+      "shift":true,
+      "row":"bottom"
     },
     {
       "character":"ฺ",
       "keyCode":66,
-      "shift":true
+      "shift":true,
+      "row":"bottom"
     },
     {
       "character":"์",
       "keyCode":78,
-      "shift":true
+      "shift":true,
+      "row":"bottom"
     },
     {
       "character":"?",
       "keyCode":77,
-      "shift":true
+      "shift":true,
+      "row":"bottom"
     },
     {
       "character":"ฒ",
       "keyCode":188,
-      "shift":true
+      "shift":true,
+      "row":"bottom"
     },
     {
       "character":"ฬ",
       "keyCode":190,
-      "shift":true
+      "shift":true,
+      "row":"bottom"
     },
     {
       "character":"ฦ",
       "keyCode":191,
-      "shift":true
+      "shift":true,
+      "row":"bottom"
     }
   ]
 
