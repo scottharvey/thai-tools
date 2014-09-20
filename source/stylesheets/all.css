@@ -100,3 +100,10 @@ body {
 .tool-typing-word-practice-character-options .with-checkbox input {
   margin: 0;
 }
+
+.tool-time-practice-clock, .tool-time-practice-thai {
+  text-align: center;
+  font-size: 60px;
+  line-height: 1em;
+  margin: 20px 0;
+}

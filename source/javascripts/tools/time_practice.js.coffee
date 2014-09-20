@@ -36,14 +36,32 @@ class TT.Tools.TimePractice
     @currentTime.minute = "0#{@currentTime.minute}" if @currentTime.minute < 10
     @currentTime.ampm = TT.random ['am', 'pm']
     @$clock.html "#{@currentTime.hour}:#{@currentTime.minute}#{@currentTime.ampm}"
+    @$thai.html ''
 
   showAnswer: =>
     @currentStep = 'answer'
-    console.log @currentTime
-    thaiHour = @thaiWord @currentTime.hour
-    thaiMinute = @thaiWord @currentTime.minute
-    # if @currentTime.hour < 6 && @currentTime.ampm == 'am'
-    answer = "ตี#{thaiHour}#{thaiMinute}นาที"
+    thaiHour = TT.numbers.inThai @currentTime.hour
+    thaiMinute = TT.numbers.inThai @currentTime.minute
+    minutes = "นาที"
+    if @currentTime.ampm == 'am'
+      if @currentTime.hour == 12
+        answer = "เที่ยงคืน#{thaiMinute}#{minutes}"
+      else if @currentTime.hour < 6
+        answer = "ตี#{thaiHour}#{thaiMinute}#{minutes}"
+      else if @currentTime.hour == 6
+        answer = "หกโมงเช้า#{thaiMinute}#{minutes}"
+      else if @currentTime.hour > 6 && @currentTime.hour < 12
+        answer = "#{thaiHour}โม#{thaiMinute}#{minutes}"
+    else
+      if @currentTime.hour == 12
+        answer = "เที่ยง#{thaiMinute}#{minutes}"
+      else if @currentTime.hour < 6
+        answer = "บ่าย#{thaiHour}โมง#{thaiMinute}#{minutes}"
+      else if @currentTime.hour == 6
+        answer = "หกโมงเย็น#{thaiMinute}#{minutes}"
+      else if @currentTime.hour > 6 && @currentTime.hour < 12
+        thaiHour = TT.numbers.inThai(@currentTime.hour - 6)
+        answer = "#{thaiHour}ทุ่ม#{thaiMinute}#{minutes}"
     @$thai.html answer
 
   close: =>
