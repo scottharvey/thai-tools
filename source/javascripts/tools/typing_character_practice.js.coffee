@@ -75,13 +75,13 @@ class TT.Tools.TypingCharacterPractice
     @$el.find("input[type='checkbox']:checked").each (index, element) =>
       values.push $(element).val()
 
-    characters = []
+    keys = []
     for value in values
       shift = value.match(/shift/)?
       row = value.replace("-shift", "")
-      characters.push(character) for character in TT.characters.forRow(row, shift)
+      keys.push(key) for key in TT.keys.forRow(row, shift)
 
-    @$thai.html TT.random(characters)
+    @$thai.html TT.random(keys)
 
   checkAnswer: (event) =>
     question = @$thai.html()

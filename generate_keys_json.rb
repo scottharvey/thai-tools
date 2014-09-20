@@ -35,7 +35,7 @@ def map_characters(codes, characters, shift)
   result
 end
 
-File.open("source/characters.json",'w') do |json_file|
+File.open("source/keys.json",'w') do |json_file|
   result = []
   result << map_characters(codes, characters, false)
   result << map_characters(shift_codes, shift_characters, true)

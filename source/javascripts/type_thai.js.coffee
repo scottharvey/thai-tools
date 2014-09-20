@@ -5,7 +5,7 @@ class TT.TypeThai
     window.keys = []
 
   catchAndReplace: (event) =>
-    thaiChar = TT.characters.byKeyCode(event.charCode)
+    thaiChar = TT.keys.byKeyCode(event.charCode)
     if thaiChar?
       event.preventDefault()
       target = event.target

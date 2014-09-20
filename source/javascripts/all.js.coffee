@@ -1,6 +1,6 @@
 #= require_tree ./vendor
 #= require namespaces
-#= require characters
+#= require keys
 #= require numbers
 #= require tool_navigation
 #= require type_thai
@@ -20,6 +20,6 @@ TT.range = (start, stop) ->
   range
 
 $ ->
-  TT.characters = new TT.Characters()
+  TT.keys = new TT.Keys()
   TT.numbers = new TT.Numbers()
   new TT.ToolNavigation($('.tool-list'))
