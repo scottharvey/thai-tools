@@ -1,6 +1,7 @@
 class TT.Tools.Counting
 
   currentStep: null
+  currentNumber: null
 
   template: ->
     """
@@ -30,13 +31,13 @@ class TT.Tools.Counting
     power = TT.random(TT.range(0, 6))
     min = Math.pow(10, power)
     max = Math.pow(10, power + 1)
-    number = Math.floor(Math.random() * (max-min + 1) + min)
-    @$el.find('.tool-counting-number').html number
+    @currentNumber = Math.floor(Math.random() * (max-min + 1) + min)
+    formatted = @currentNumber.toString().replace /(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1,"
+    @$el.find('.tool-counting-number').html formatted
 
   showAnswer: =>
     @currentStep = 'answer'
-    question = @$el.find('.tool-counting-number').html()
-    @$el.find('.tool-counting-answer').html TT.numbers.translate(question)
+    @$el.find('.tool-counting-answer').html TT.numbers.translate(@currentNumber)
 
   handleKeyPress: (event) =>
     if @currentStep == 'question'
