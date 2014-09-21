@@ -14,6 +14,7 @@ class TT.Tools.ReadingPractice
       <div class='tool-hints'>
         <ul>
           <li>Hit enter to show the next word</li>
+          <li>Hit space to listen to the word</li>
         </ul>
       </div>
     """
@@ -21,6 +22,7 @@ class TT.Tools.ReadingPractice
   constructor: (@$el) ->
     @$el.append @template()
     @fetchWords @showNewWord
+    @$thai = @$el.find('.tool-reading-practice-thai')
     $(document).on 'keypress.ReadingPractice', @handleKeyPress
 
   close: =>
@@ -32,7 +34,11 @@ class TT.Tools.ReadingPractice
       callback()
 
   showNewWord: =>
-    @$el.find('.tool-reading-practice-thai').html TT.random(@words)
+    @$thai.html TT.random(@words)
+
+  sayWord: =>
+    TT.sayWord @$thai.text()
 
   handleKeyPress: (event) =>
     @showNewWord() if event.which == 13
+    @sayWord() if event.which == 32

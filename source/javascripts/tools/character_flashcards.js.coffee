@@ -17,6 +17,7 @@ class TT.Tools.CharacterFlashcards
       <div class='tool-hints'>
         <ul>
           <li>Hit enter to continue</li>
+          <li>Hit pace to listen to character</li>
         </ul>
       </div>
     """
@@ -49,7 +50,18 @@ class TT.Tools.CharacterFlashcards
     @$wrapper.removeClass 'question'
     @$wrapper.addClass 'answer'
 
-  handleKeyPress: =>
+  sayCharacter: =>
+    if @currentLetter.type == 'consonant'
+      TT.sayWord @currentLetter.character
+      word = @currentLetter.word
+      setTimeout((-> TT.sayWord word), 1000)
+    else
+      TT.sayWord @currentLetter.pronounceable_character
+
+  handleKeyPress: (event) =>
+    if event.which == 32
+      event.preventDefault()
+      @sayCharacter()
     if event.which == 13
       if @currentStep == 'question'
         @showAnswer()

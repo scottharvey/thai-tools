@@ -20,6 +20,9 @@ TT.range = (start, stop) ->
     index = index + 1
   range
 
+TT.sayWord = (text) ->
+  new Audio("#{$('#text-to-speach-url').val()}#{text}").play()
+
 $ ->
   TT.keys = new TT.Keys()
   TT.alphabet = new TT.Alaphbet()
