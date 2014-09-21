@@ -41,4 +41,6 @@ class TT.Tools.ReadingPractice
 
   handleKeyPress: (event) =>
     @showNewWord() if event.which == 13
-    @sayWord() if event.which == 32
+    if event.which == 32
+      event.preventDefault()
+      @sayWord()

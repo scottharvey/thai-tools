@@ -18,6 +18,7 @@ class TT.Tools.TimePractice
       <div class='tool-hints'>
         <ul>
           <li>Hit enter to continue</li>
+          <li>Hit space to listen to the word</li>
         </ul>
       </div>
     """
@@ -67,9 +68,13 @@ class TT.Tools.TimePractice
   close: =>
     $(document).off 'keypress.TimePractice', @handleKeyPress
 
-  handleKeyPress: =>
+  handleKeyPress: (event) =>
     if event.which == 13
       if @currentStep == 'question'
         @showAnswer()
       else
         @showQuestion()
+    else if event.which == 32
+      event.preventDefault()
+      text = @$thai.text()
+      TT.sayWord text if text.length > 0

@@ -16,6 +16,7 @@ class TT.Tools.TypingWordPractice
         <ul>
           <li>Hit enter once you have typed in the word</li>
           <li>Press command+enter to skip the word</li>
+          <li>Hit space to listen to the word</li>
         </ul>
       </div>
     """
@@ -55,5 +56,8 @@ class TT.Tools.TypingWordPractice
     key = event.which
     if (event.metaKey || event.ctrlKey) && key == 13
       @showNewWord()
+    else if key == 32
+      event.preventDefault()
+      TT.sayWord @$thai.text()
     else if key == 13
       @checkAnswer(event)

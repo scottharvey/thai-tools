@@ -27,10 +27,11 @@ class TT.Tools.CharacterFlashcards
     @$thai = @$el.find('.tool-character-flashcards-thai')
     @$english = @$el.find('.tool-character-flashcards-english')
     @$wrapper = @$el.find('.tool-character-flashcards')
-    $(document).on 'keypress.TimePractice', @handleKeyPress
+    $(document).on 'keypress.CharacterFlashcards', @handleKeyPress
     @showQuestion()
 
   close: =>
+    $(document).off 'keypress.CharacterFlashcards', @handleKeyPress
 
   showQuestion: =>
     @currentStep = 'question'
