@@ -13,7 +13,19 @@ title: Thai Language Learning Tools
 </ul>
 
 <h2>Options</h2>
-<label>
-  Text to speach URL
-  <input id='text-to-speach-url' type='text' value='http://localhost:4567/' />
-</label>
+<form id='options'>
+  <h4>Text to speech</h4>
+  <p>This site does not currently handle text to speech but it might one day. For now if you want to have text to speech you will need to run a local server to handle it for you. You can see an example server on <a href=''>this GitHub page</a> and once you have it running locally add the URL to the server here.</p>
+  <label>
+    URL
+    <input id='text-to-speech-url' type='text' placeholder='http://localhost:4567/' />
+
+  <h4>Auto switch keyboard</h4>
+  <p>The script which automatically types in Thai for certain input fields has not been tested on many browser or operating systems. If you have problems you can disable it here and if you have time send me an email letting me know what happened. <a href='mailto:scott@scottharvey.co'>scott@scottharvey.co</a></p>
+  <label class="checkbox">
+    <input id='auto-switch-to-thai' type="checkbox">
+    <span>Automatically type Thai</span>
+  </label>
+  <br />
+  <input type="submit" value="Save Options" />
+</form>

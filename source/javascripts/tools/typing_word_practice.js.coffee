@@ -25,7 +25,7 @@ class TT.Tools.TypingWordPractice
     @$el.append @template()
     @$input = @$el.find('.tool-typing-word-practice-input')
     @$thai = @$el.find('.tool-typing-word-practice-thai')
-    new TT.TypeThai(@$input)
+    new TT.TypeThai(@$input) if TT.options('auto_switch_to_thai')
     @$input.on 'focus', @showNewWord
     @fetchWords =>
       @showNewWord()

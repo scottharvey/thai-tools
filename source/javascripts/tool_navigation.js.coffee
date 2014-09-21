@@ -13,13 +13,14 @@ class TT.ToolNavigation
   showTool: (name) =>
     @closeTool() if @currentTool
     $container = $('.container')
+    $container.append("<div class='overlay'></div>")
     $container.append("<div class='tool sheet'><div class='sheet-close'>X</div></div>")
     $container.find('.sheet-close').on 'click', @closeTool
     @currentTool = new TT.Tools[name]($container.find('.sheet'))
 
   closeTool: (event) =>
     @currentTool.close()
-    $('.tool').remove()
+    $('.tool, .overlay').remove()
 
   handleKeyPress: (event) =>
     key = event.which

@@ -23,11 +23,23 @@ body {
   margin-left: 10px;
 }
 
+.overlay {
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.9;
+  height: 100%;
+  z-index: 1;
+}
+
 .sheet {
   background: white;
   border-radius: 5px;
   border: 1px solid rgb(233, 233, 233);
   padding: 20px;
+  z-index: 2;
 }
 
 .sheet-close {
@@ -152,4 +164,26 @@ body {
   font-size: 50px;
   line-height: 1.4em;
   text-align: center;
+}
+
+.notice {
+  background: rgb(211, 249, 218);
+  margin-bottom: 15px;
+  padding: 15px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+
+#options h4 {
+  margin-bottom: 0;
+}
+
+#options p {
+  margin: 0 0 5px 0;
+}
+
+#options input[type='submit'] {
+  margin-top: 20px;
 }

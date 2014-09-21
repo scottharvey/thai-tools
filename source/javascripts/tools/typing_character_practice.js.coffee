@@ -61,7 +61,7 @@ class TT.Tools.TypingCharacterPractice
     @$el.append @template()
     @$input = @$el.find('.tool-typing-character-practice-input')
     @$thai = @$el.find('.tool-typing-character-practice-thai')
-    new TT.TypeThai(@$input)
+    new TT.TypeThai(@$input) if TT.options('auto_switch_to_thai')
     @$input.on 'focus', @showNewCharacter
     @$input.focus()
     $(document).on 'keyup.TypingCharacterPractice', @checkAnswer
