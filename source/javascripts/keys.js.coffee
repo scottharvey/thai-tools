@@ -7,6 +7,7 @@ class TT.Keys
 
   constructor: ->
     $.get @keysURL(), (data) =>
+      # @keys = JSON.parse(data)
       @keys = data
       $.each @keys, (index, attrs) =>
         @allCharacters.push attrs['character']

@@ -1,4 +1,4 @@
-class TT.Alaphbet
+class TT.Alphabet
 
   alphabet: []
   alphabetURL: -> '/alphabet.json'
@@ -6,6 +6,7 @@ class TT.Alaphbet
 
   constructor: ->
     $.get @alphabetURL(), (data) =>
+      # @alphabet = JSON.parse(data)
       @alphabet = data
       $.each @alphabet, (index, attrs) =>
         @allCharacters.push attrs['character']

@@ -33,11 +33,12 @@ TT.options = (name) ->
 
 TT.sayWord = (text) ->
   url = TT.options('text_to_speech_url')
+  console.log url
   new Audio("#{url}#{text}").play() if url.length > 0
 
 $ ->
   TT.keys = new TT.Keys()
-  TT.alphabet = new TT.Alaphbet()
+  TT.alphabet = new TT.Alphabet()
   TT.numbers = new TT.Numbers()
   new TT.ToolNavigation $('.tool-list')
   new TT.Options $('#options')
