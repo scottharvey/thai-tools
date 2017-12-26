@@ -52,7 +52,7 @@ class TT.Tools.TimePractice
       else if @currentTime.hour == 6
         answer = "หกโมงเช้า#{thaiMinute}#{minutes}"
       else if @currentTime.hour > 6 && @currentTime.hour < 12
-        answer = "#{thaiHour}โม#{thaiMinute}#{minutes}"
+        answer = "#{thaiHour}โมง#{thaiMinute}#{minutes}"
     else
       if @currentTime.hour == 12
         answer = "เที่ยง#{thaiMinute}#{minutes}"

@@ -32,9 +32,11 @@ TT.options = (name) ->
   JSON.parse(options)[name] if options?
 
 TT.sayWord = (text) ->
-  url = TT.options('text_to_speech_url')
-  console.log url
-  new Audio("#{url}#{text}").play() if url.length > 0
+  # url = TT.options('text_to_speech_url')
+  # new Audio("#{url}#{text}").play() if url.length > 0
+  msg = new SpeechSynthesisUtterance(text)
+  msg.lang = 'th'
+  window.speechSynthesis.speak(msg);
 
 $ ->
   TT.keys = new TT.Keys()
